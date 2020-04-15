@@ -1,8 +1,9 @@
-import { useEffect } from 'react'
-const [show, setShow] = useState(false)
-
+import { useEffect, useState, useRef } from 'react'
 
 export function useNearScreen() {
+    const element = useRef(null)
+    const [show, setShow] = useState(false)
+
     useEffect(function() {
         Promise.resolve(
             typeof window.IntersectionObserver != 'undefined'
@@ -21,4 +22,6 @@ export function useNearScreen() {
             observer.observe(element.current)
         })
     }, [element])
+
+    return [show, element]
 }
