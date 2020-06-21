@@ -1,13 +1,15 @@
 import React from "react"
 import { Svg } from './styles'
+import { Link } from '@reach/router'
 
-export const Logo = props => (
+export const Logo = (props) => (
+  <Link to="/">
     <Svg
       width={387.413}
       height={121.49}
       viewBox="56.294 14.255 387.413 121.49"
       style={{
-        background: "0 0"
+        background: "0 0",
       }}
       preserveAspectRatio="xMidYMid"
       {...props}
@@ -55,4 +57,5 @@ export const Logo = props => (
       </g>
       <style />
     </Svg>
-)
+  </Link>
+);
